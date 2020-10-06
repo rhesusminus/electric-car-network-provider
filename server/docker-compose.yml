@@ -1,17 +1,6 @@
 version: '3.4'
 
 services:
-  server:
-    image: server
-    build: .
-    environment:
-      NODE_ENV: development
-    ports:
-      - 3000:3000
-    volumes:
-      - .:/usr/src/app
-    command: npm run dev
-
   mongodb:
     image: mongo:4.4.1-bionic
     ports:
