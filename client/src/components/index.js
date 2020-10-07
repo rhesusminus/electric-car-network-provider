@@ -1,3 +1,4 @@
-import App from './App'
-
 export * from './App'
+export * from './Layout'
+export * from './Header'
+export * from './Footer'
