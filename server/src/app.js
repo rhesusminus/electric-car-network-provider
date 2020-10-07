@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const { REDIS_CONFIG, SESSION_OPTIONS } = require('./config')
 const { parseError } = require('./utils')
+const { NotFound } = require('./errors')
 
 const sessionRouter = require('./routes/session')
 
@@ -28,7 +29,7 @@ app.use('/api/session', sessionRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-  res.status(404).json({ message: 'Not Found' })
+  throw new NotFound()
 })
 
 app.use(function (error, req, res, next) {

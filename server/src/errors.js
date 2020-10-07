@@ -6,6 +6,24 @@ class BadRequest extends Error {
   }
 }
 
+class Unauthorized extends Error {
+  constructor(message = 'Unauthorized') {
+    super(message)
+
+    this.status = 401
+  }
+}
+
+class NotFound extends Error {
+  constructor(message = 'Not Found') {
+    super(message)
+
+    this.status = 404
+  }
+}
+
 module.exports = {
-  BadRequest
+  BadRequest,
+  Unauthorized,
+  NotFound
 }
