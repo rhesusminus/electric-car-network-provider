@@ -10,6 +10,7 @@ const { parseError } = require('./utils')
 const { NotFound } = require('./errors')
 
 const sessionRouter = require('./routes/session')
+const stationsRouter = require('./routes/stations')
 
 const app = express()
 
@@ -26,6 +27,7 @@ const client = new Redis({ port: REDIS_CONFIG.port, host: REDIS_CONFIG.host })
 app.use(session({ ...SESSION_OPTIONS, store: new RedisStore({ client }) }))
 
 app.use('/api/session', sessionRouter)
+app.use('/api/stations', stationsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
