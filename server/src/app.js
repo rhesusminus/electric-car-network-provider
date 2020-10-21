@@ -7,8 +7,8 @@ const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const cors = require('cors')
 const { REDIS_CONFIG, SESSION_OPTIONS } = require('./config')
-const { parseError } = require('./utils')
 const { NotFound } = require('./errors')
+const { connectDb } = require('./database')
 
 const sessionRouter = require('./routes/session')
 const stationsRouter = require('./routes/stations')
@@ -21,6 +21,8 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors())
+
+connectDb()
 
 const RedisStore = connectRedis(session)
 

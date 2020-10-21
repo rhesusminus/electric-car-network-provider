@@ -8,7 +8,8 @@ const data = [
     location: 'Oulu',
     status: 0,
     generalInformation: 'You can recharge your car here',
-    type: 'slow'
+    type: 'slow',
+    price: 0
   },
   {
     id: 'QA13',
@@ -16,7 +17,8 @@ const data = [
     location: 'Oulu',
     status: 1,
     generalInformation: 'You can recharge your car here',
-    type: 'fast'
+    type: 'fast',
+    price: 18
   },
   {
     id: 'QA14',
@@ -24,7 +26,8 @@ const data = [
     location: 'Kemi',
     status: 0,
     generalInformation: 'You can recharge your car here',
-    type: 'slow'
+    type: 'slow',
+    price: 20
   }
 ]
 

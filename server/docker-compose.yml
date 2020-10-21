@@ -5,8 +5,16 @@ services:
     image: mongo:4.4.1-bionic
     ports:
       - 27017:27017
+    env_file: .env
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+      - MONGO_INITDB_DATABASE=$MONGO_DB
+      - MONGO_USERNAME=$MONGO_USERNAME
+      - MONGO_PASSWORD=$MONGO_PASSWORD
     volumes:
       - data:/data/db
+      - ./mongo-init:/docker-entrypoint-initdb.d/:ro
 
   redis:
     image: redis:6.0.8-alpine

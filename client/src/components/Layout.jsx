@@ -1,12 +1,15 @@
 import React from 'react'
+import { Box, Flex } from '@chakra-ui/core'
 import { Header, Footer } from '.'
 
-export const Layout = ({ children }) => {
+export const Layout = (props) => {
   return (
-    <>
-      <Header></Header>
-      {children}
-      <Footer></Footer>
-    </>
+    <Flex minHeight="100vh" minWidth="100vw" align="center" justify="center">
+      <Flex direction="column" minWidth="700px" minHeight="100vh" {...props}>
+        <Header></Header>
+        {props.children}
+        <Footer></Footer>
+      </Flex>
+    </Flex>
   )
 }
