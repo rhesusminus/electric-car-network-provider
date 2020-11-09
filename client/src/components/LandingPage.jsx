@@ -17,8 +17,8 @@ export const LandingPage = () => {
   return (
     <div>
       {data.map((station) => (
-        <Link to={`/station/${station.id}`}>
-          <Station station={station} key={station.id} />
+        <Link to={`/station/${station.id}`} key={station.id}>
+          <Station station={station} />
         </Link>
       ))}
     </div>

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { QueryCache, ReactQueryCacheProvider } from 'react-query'
 import { Router } from '@reach/router'
 import { ThemeProvider, theme } from '@chakra-ui/core'
-import { LandingPage, Home, Layout, StationDetails } from './components'
+import { LandingPage, Home, Layout, StationDetails, Login } from './components'
 import './styles/index.css'
 
 const queryCache = new QueryCache()
@@ -16,6 +16,7 @@ ReactDOM.render(
           <Router>
             <LandingPage path="/" />
             <Home path="/home" />
+            <Login path="/login" />
             <StationDetails path="/station/:stationId" />
           </Router>
         </Layout>
